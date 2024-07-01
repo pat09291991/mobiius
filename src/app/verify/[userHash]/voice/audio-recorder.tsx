@@ -11,11 +11,36 @@ type AudioRecorderProps = {
   onError: (err: string) => void;
 };
 
+interface SpeechRecognitionErrorEvent {
+  readonly error: string;
+  readonly message: string;
+}
+
+interface SpeechRecognition {
+  continuous: boolean;
+  interimResults: boolean;
+  lang: string;
+  start(): void;
+  stop(): void;
+  onresult: (event: SpeechRecognitionEvent) => void;
+  onerror: (event: SpeechRecognitionErrorEvent) => void;
+}
+
+// Extend the Window interface to include webkitSpeechRecognition
+interface Window {
+  webkitSpeechRecognition: {
+    new (): SpeechRecognition;
+  };
+}
+
 export default function AudioRecorder({
   onRecord,
   onError,
 }: AudioRecorderProps) {
   const recorderControls = useVoiceVisualizer();
+  const {
+    webkitSpeechRecognition,
+  }: { webkitSpeechRecognition: new () => SpeechRecognition } = window as any;
 
   const [isRecording, setIsRecording] = useState(false);
   const [transcript, setTranscript] = useState("");
@@ -43,7 +68,7 @@ export default function AudioRecorder({
   const startVoiceRecording = () => {
     onRecord(null);
     onError("");
-    const recognition = new window.webkitSpeechRecognition();
+    const recognition = new (window as any).webkitSpeechRecognition();
     recognition.continuous = false;
     recognition.interimResults = false;
     recognition.lang = "en-US";
