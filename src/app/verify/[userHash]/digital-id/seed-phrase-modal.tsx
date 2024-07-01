@@ -64,46 +64,46 @@ const initialValues = [
   },
   {
     id: 2,
-    label: "Issue",
+    label: "Flame",
   },
   {
     id: 3,
-    label: "Issue",
+    label: "Sample",
   },
   {
     id: 4,
-    label: "Issue",
+    label: "Lyric",
   },
   {
     id: 5,
-    label: "Issue",
+    label: "Find",
   },
   {
     id: 6,
-    label: "Issue",
+    label: "Vault",
   },
   {
     id: 7,
-    label: "Issue",
+    label: "Dog",
   },
   {
     id: 8,
-    label: "Issue",
+    label: "Banner",
   },
   {
     id: 9,
-    label: "Issue",
+    label: "Cute",
   },
   {
     id: 10,
-    label: "Issue",
+    label: "Cat",
   },
   {
     id: 11,
-    label: "Issue",
+    label: "Civil",
   },
   {
     id: 12,
-    label: "Issue",
+    label: "Goat",
   },
 ];

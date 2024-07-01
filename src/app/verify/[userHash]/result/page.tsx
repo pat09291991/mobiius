@@ -64,6 +64,8 @@ export default function VerifyResultPage({
   const [processData, setProcessData] = useState(false);
   const router = useRouter();
 
+  const aboutString = localStorage.getItem("about");
+  const about = aboutString ? JSON.parse(aboutString) : "";
   const idFront = localStorage.getItem("idFront");
   const idBack = localStorage.getItem("idBack");
   const selfieUp = localStorage.getItem("selfie-UP");
@@ -95,7 +97,7 @@ export default function VerifyResultPage({
           <div className="flex flex-col gap-y-1">
             {/* Insert Name */}
             <span className="text-black font-bold text-2xl">
-              John Doe John Doe John Doe John Doe{" "}
+              {`${about.firstName} ${about.lastName}`}{" "}
               <Icon
                 className="material-icons text-[#5251DA]"
                 icon="check_circle"
@@ -104,11 +106,11 @@ export default function VerifyResultPage({
             </span>
             {/* Insert Birthday */}
             <span className="text-[#686873] text-sm font-normal">
-              Birthdate: December 15, 1999
+              Birthdate: {about.dob}
             </span>
             {/* Insert Address */}
             <span className="text-[#686873] text-sm font-normal">
-              Address: Metro manila, Philippines
+              Address: {about.address}
             </span>
           </div>
           <div className="flex justify-center items-center gap-x-8">
