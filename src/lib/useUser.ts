@@ -4,8 +4,6 @@ import { UserPassport } from "./types";
 export function useUser(hashKey: string) {
   const [user, setUser] = useState<UserPassport>();
 
-  return user;
-
   useEffect(() => {
     const fetchUser = async () => {
       const response = await fetch(

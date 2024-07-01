@@ -73,20 +73,13 @@ export type SpeechRecognitionAlternative = {
   confidence: number;
 };
 
-export type EventData = {
+export type Users = {
   id: number;
   image: string;
-  category: string;
+  name: string;
   price: number;
   status: string;
-};
-
-export type RecentBuyData = {
-  id: number;
-  name: string;
-  share_type: string;
-  share_amount: number;
-  potential_win: number;
+  kyc_date: string;
 };
 
 export type RecentLogins = {
