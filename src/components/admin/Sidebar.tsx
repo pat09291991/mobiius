@@ -9,9 +9,7 @@ import { Icon } from "../ui/Icon";
 
 export default function Sidebar() {
   const isDashboard = useMatch("dashboard");
-  const isContracts = useMatch("contracts");
   const isUsers = useMatch("users");
-  const isTeam = useMatch("team");
 
   const { isOpen, updateIsOpen } = useOpenSidebar();
 
@@ -40,25 +38,15 @@ export default function Sidebar() {
         </Link>
         <Link
           onClick={() => updateIsOpen(false)}
-          href="contracts"
-          className={`flex gap-x-2 items-center ${
-            isContracts ? "text-[#875FFE]" : ""
-          }`}
-        >
-          <Icon className="material-icons" icon="assignment" size={20} />
-          <span>Contracts</span>
-        </Link>
-        <Link
-          onClick={() => updateIsOpen(false)}
           href="users"
           className={`flex gap-x-2 items-center ${
             isUsers ? "text-[#875FFE]" : ""
           }`}
         >
           <Icon className="material-icons" icon="people" size={20} />
-          <span>Futr Users</span>
+          <span>Users</span>
         </Link>
-        <Link
+        {/* <Link
           onClick={() => updateIsOpen(false)}
           href="team"
           className={`flex gap-x-2 items-center ${
@@ -67,7 +55,7 @@ export default function Sidebar() {
         >
           <Icon className="material-icons" icon="groups" size={20} />
           <span>Team</span>
-        </Link>
+        </Link> */}
       </div>
     </nav>
   );

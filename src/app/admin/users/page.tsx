@@ -1,10 +1,10 @@
-import FutrUsers from "@/components/admin/FutrUsers";
 import AdminBox from "../adminbox";
+import UsersSection from "@/components/admin/UsersSection";
 
 export default function Users() {
   return (
     <AdminBox>
-      <FutrUsers />
+      <UsersSection />
     </AdminBox>
   );
 }

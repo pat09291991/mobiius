@@ -30,7 +30,7 @@ export default function AdminHeader({
             <Icon className="material-icons" icon="account_circle" size={30} />
           )}
 
-          <Label className="whitespace-nowrap me-8">Jane S.</Label>
+          <Label className="whitespace-nowrap me-8">Admin</Label>
           <Icon className="material-icons" icon="arrow_drop_down" size={20} />
         </div>
         <div className="flex justify-between items-center w-full">
